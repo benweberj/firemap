@@ -196,9 +196,13 @@ const Map = (props) => {
     // Set the state
     // Controls the state list visibility.
     const handleSelectState = (stateName) => {
-      const selectedStateAbbr = stateAbbreviations.find(state => state.name === stateName).abbreviation;
-      console.log(selectedStateAbbr);
-      setSelectedState(selectedStateAbbr);
+      if (stateName === 'all') {
+        setSelectedState(null)
+      } else {
+        const selectedStateAbbr = stateAbbreviations.find(state => state.name === stateName).abbreviation;
+        console.log(selectedStateAbbr);
+        setSelectedState(selectedStateAbbr);
+      }
       setShowStateList(false);
     }
 
@@ -213,6 +217,7 @@ const Map = (props) => {
     const stateList = (
       <div className="state-list" style={{ position: "absolute", bottom: '60px', right: '12px', backgroundColor: "rgba(255, 255, 255, 0)", padding: 10, zIndex: 1, maxHeight: 200, overflowY: "scroll" }}>
         <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+          <li key='all-states' onClick={() => handleSelectState('all')} style={{ padding: '10px', margin: '5px 0', backgroundColor: '#e2e2e2', borderRadius: '5px', textAlign: 'center', cursor: 'pointer' }}>All</li>
           {stateAbbreviations.map((state) => (
             <li key={state.abbreviation} onClick={() => handleSelectState(state.name)} style={{ padding: '10px', margin: '5px 0', backgroundColor: '#f2f2f2', borderRadius: '5px', textAlign: 'center', cursor: 'pointer' }}>{state.name}</li>
           ))}
