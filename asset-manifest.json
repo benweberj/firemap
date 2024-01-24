@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/firemap/static/js/main.fab8965a.js",
+    "main.js": "/firemap/static/js/main.d028dd7a.js",
     "index.html": "/firemap/index.html",
-    "main.fab8965a.js.map": "/firemap/static/js/main.fab8965a.js.map"
+    "main.d028dd7a.js.map": "/firemap/static/js/main.d028dd7a.js.map"
   },
   "entrypoints": [
-    "static/js/main.fab8965a.js"
+    "static/js/main.d028dd7a.js"
   ]
 }
